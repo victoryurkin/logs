@@ -44,7 +44,7 @@ const efficientSolution = async (logSources, printer) => {
     promises.push(getAllLogsFromSource(logSources[i]));
   }
 
-  Promise.all(promises).then((logs) => {
+  await Promise.all(promises).then((logs) => {
     logs.forEach((log) => {
       log.forEach((entry) => {
         minHeap.insert(entry);
